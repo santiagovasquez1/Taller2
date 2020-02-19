@@ -1,25 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace Taller2
 {
     public class Ciudad : Nodo
     {
-        public int Poblacion { get; set; }
+        private int poblacion;
 
-        public Ciudad(string nombre,int poblacion)
+        public int Poblacion
+        {
+            get { return poblacion; }
+            set { poblacion = value; ExportarPropiedades(Valor:value); }
+        }
+
+        public Ciudad(string nombre, int poblacion)
         {
             Nombre = nombre;
             Poblacion = poblacion;
         }
+
         public override void FuncionGeo()
         {
             Console.WriteLine($"{Nombre}, Poblacion : {Poblacion}");
         }
+
         public override string ToString()
         {
             return ($"Ciudad_{Nombre}");
         }
+
     }
 }

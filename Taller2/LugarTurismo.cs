@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Taller2
 {
     public class LugarTurismo : Nodo
     {
-        public double[] Coord { get; set; }
+        private double[] coord;
+
+        public double[] Coord
+        {
+            get { return coord; }
+            set { coord = value; ExportarPropiedades(Valor: ($"X:{coord[0]},Y:{coord[1]}")); }
+        }
 
         public LugarTurismo(string nombre, double[]coord)
         {
@@ -15,11 +22,12 @@ namespace Taller2
         }
         public override void FuncionGeo()
         {
-            Console.WriteLine($"X: {Coord[0]}, Y: {Coord[1]}");
+            Console.WriteLine($"Turismo: {Nombre} X: {Coord[0]}, Y: {Coord[1]}");
         }
         public override string ToString()
         {
             return($"Turismo_{Nombre}");
         }
+
     }
 }

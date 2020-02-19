@@ -2,8 +2,12 @@
 
 namespace Taller2
 {
+    
     public class GrafoXML : Exportar
     {
+        private XmlDocument document;
+        private XmlElement raiz;
+
         public GrafoXML(IComponente componente) : base(componente)
         {
             ExportarGrafo();
@@ -11,24 +15,13 @@ namespace Taller2
 
         public override void ExportarGrafo()
         {
-            XmlDocument document = new XmlDocument();
-            XmlElement raiz = document.CreateElement("Grafo");
+            document = new XmlDocument();
+            raiz = document.CreateElement("Grafo");
             document.AppendChild(raiz);
 
             foreach (var nodo in ComponenteConcreto.Nodos)
             {
-                XmlElement nodoi = document.CreateElement(nodo.ToString());
-                raiz.AppendChild(nodoi);
-
-                if (nodo.enlaces != null)
-                {
-                    foreach (var enlace in nodo.enlaces)
-                    {
-                        XmlElement enlacei = document.CreateElement("Enlace");
-                        enlacei.AppendChild(document.CreateTextNode(enlace.ToString()));
-                        nodoi.AppendChild(enlacei);
-                    }
-                }
+                AutoReccorer(nodo,raiz);
             }
 
             if (ComponenteConcreto.Enlaces != null)
@@ -49,6 +42,31 @@ namespace Taller2
             }
 
             document.Save("Prueba.xml");
+        }
+
+        public void AutoReccorer(Nodo nodo ,XmlElement praiz)
+        {
+            XmlElement nodoi = document.CreateElement(nodo.ToString());
+
+            foreach(var prop in nodo.Propiedades)
+            {
+                XmlElement propi= document.CreateElement(prop.Item1);
+                propi.AppendChild(document.CreateTextNode(prop.Item2.ToString()));
+                nodoi.AppendChild(propi);
+            }
+            
+            praiz.AppendChild(nodoi);
+
+            if (nodo.enlaces != null)
+            {
+               foreach(var enlace in nodo.enlaces)
+                {
+                    XmlElement enlacei = document.CreateElement(enlace.ToString());
+                    nodoi.AppendChild(enlacei);
+                    AutoReccorer(enlace.Origen,enlacei);
+                    AutoReccorer(enlace.Destino,enlacei);
+                }
+            }
         }
     }
 }

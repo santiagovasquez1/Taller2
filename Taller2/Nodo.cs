@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace Taller2
 {
-    public abstract class  Nodo
+    public abstract class Nodo
     {
-        public string Nombre { get; set; }
-        public List<Enlace> enlaces { get; set; }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; ExportarPropiedades(Valor: nombre); }
+        }
+
+        public List<Enlace> enlaces { get; set; } = new List<Enlace>();
+        public List<Tuple<string, object>> Propiedades = new List<Tuple<string, object>>();
 
         public abstract void FuncionGeo();
 
@@ -15,6 +23,12 @@ namespace Taller2
         {
             var tempEnlaces = new List<Enlace>();
             return tempEnlaces;
+        }
+
+        public void ExportarPropiedades([CallerMemberName] string Name = null, object Valor = null)
+        {
+            var Temp = new Tuple<string, object>(Name, Valor);
+            Propiedades.Add(Temp);
         }
     }
 }

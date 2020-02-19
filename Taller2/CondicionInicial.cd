@@ -34,28 +34,36 @@
   <Class Name="Taller2.Nodo">
     <Position X="5.75" Y="3.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAgAAAAAAAAMAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAABAAAAAABAACAAAAAgAAAAAAAAMAAAAAAAAAAAAA=</HashCode>
       <FileName>Nodo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Taller2.Ciudad">
-    <Position X="1" Y="6.5" Width="1.75" />
+    <Position X="1" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAAAAAEAAAABA=</HashCode>
       <FileName>Ciudad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Taller2.Industria">
-    <Position X="4.75" Y="6.5" Width="1.75" />
+    <Position X="4.5" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAABAAIAAQAAAAAAAAAA=</HashCode>
       <FileName>Industria.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Taller2.LugarTurismo">
-    <Position X="7.5" Y="6.5" Width="1.75" />
+    <Position X="8.25" Y="7.25" Width="1.75" />
+    <InheritanceLine Type="Taller2.Nodo" FixedToPoint="true">
+      <Path>
+        <Point X="6.875" Y="6.276" />
+        <Point X="6.875" Y="6.875" />
+        <Point X="8.812" Y="6.875" />
+        <Point X="8.812" Y="7.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAABAAIAAQAAAAAAAAAA=</HashCode>
       <FileName>LugarTurismo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -68,17 +76,21 @@
     <ShowAsAssociation>
       <Field Name="ComponenteConcreto" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
+    <ShowAsCollectionAssociation>
+      <Property Name="Nodos" />
+      <Property Name="Enlaces" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.144" />
   </Class>
   <Class Name="Taller2.GrafoXML">
-    <Position X="12" Y="5" Width="1.5" />
+    <Position X="12" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAgAAAAAAAAIAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>GrafoXML.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Taller2.Program">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>

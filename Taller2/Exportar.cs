@@ -4,6 +4,7 @@ namespace Taller2
 {
     public abstract class Exportar : IComponente
     {
+
         public IComponente ComponenteConcreto;
         public List<Nodo> Nodos { get; set; }
         public List<Enlace> Enlaces { get; set; }
