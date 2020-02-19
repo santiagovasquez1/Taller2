@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Taller2.Grafo">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grafo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Nodos" />
+      <Property Name="Enlaces" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Taller2.Enlace">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Origen" Type="Taller2.Nodo" FixedFromPoint="true">
+      <Path>
+        <Point X="2.5" Y="4.188" />
+        <Point X="3.667" Y="4.188" Type="JumpStart" />
+        <Point X="3.833" Y="4.188" Type="JumpEnd" />
+        <Point X="5.75" Y="4.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Enlace.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Origen" />
+      <Property Name="Destino" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Taller2.Nodo">
+    <Position X="5.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAgAAAAAAAAMAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.Ciudad">
+    <Position X="1" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAAAAAEAAAAAA=</HashCode>
+      <FileName>Ciudad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.Industria">
+    <Position X="4.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Industria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.LugarTurismo">
+    <Position X="7.5" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>LugarTurismo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.Exportar" HideInheritanceLine="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Exportar.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ComponenteConcreto" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Taller2.GrafoXML">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GrafoXML.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.Program">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.ExportarFactory">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ExportarFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Exportar" />
+      <Property Name="IComponente" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Taller2.IComponente">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IComponente.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
