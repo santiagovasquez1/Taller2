@@ -4,14 +4,10 @@ using System.Text;
 
 namespace Taller2
 {
-    public class Grafo:IComponente
+    public class Grafo
     {
         public List<Nodo> Nodos { get; set; }
         public List<Enlace> Enlaces { get; set; }
-
-        public  void ExportarGrafo()
-        {
-          
-        }
+    
     }
 }

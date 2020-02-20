@@ -12,7 +12,7 @@ namespace Taller2
         public double[] Coord
         {
             get { return coord; }
-            set { coord = value; ExportarPropiedades(Valor: ($"X:{coord[0]},Y:{coord[1]}")); }
+            set { coord = value; }
         }
 
         public LugarTurismo(string nombre, double[]coord)

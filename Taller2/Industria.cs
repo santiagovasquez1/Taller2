@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 
 namespace Taller2
 {
@@ -10,7 +9,7 @@ namespace Taller2
         public double[] Coord
         {
             get { return coord; }
-            set { coord = value; ExportarPropiedades(Valor: ($"X:{coord[0]},Y:{coord[1]}")); }
+            set { coord = value; }
         }
 
         public Industria(string nombre, double[] coord)
@@ -28,7 +27,5 @@ namespace Taller2
         {
             return ($"Industria_{Nombre}");
         }
-
-
     }
 }

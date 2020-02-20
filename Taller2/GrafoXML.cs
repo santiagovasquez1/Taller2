@@ -1,72 +1,69 @@
-﻿using System.Xml;
+﻿using System.Collections.Generic;
+using System.Xml;
 
 namespace Taller2
 {
-    
-    public class GrafoXML : Exportar
+    public class GrafoXML : IExportar
     {
         private XmlDocument document;
         private XmlElement raiz;
+        private List<XmlElement> Elementos = new List<XmlElement>();
 
-        public GrafoXML(IComponente componente) : base(componente)
-        {
-            ExportarGrafo();
-        }
-
-        public override void ExportarGrafo()
+        public void CrearDocumento()
         {
             document = new XmlDocument();
             raiz = document.CreateElement("Grafo");
             document.AppendChild(raiz);
 
-            foreach (var nodo in ComponenteConcreto.Nodos)
-            {
-                AutoReccorer(nodo,raiz);
-            }
+            Elementos.Add(raiz);
+        }
 
-            if (ComponenteConcreto.Enlaces != null)
-            {
-                foreach (var enlacei in ComponenteConcreto.Enlaces)
-                {
-                    XmlElement enlace = document.CreateElement(enlacei.ToString());
-                    raiz.AppendChild(enlace);
-
-                    XmlElement origen = document.CreateElement("origen");
-                    origen.AppendChild(document.CreateTextNode(enlacei.Origen.ToString()));
-                    XmlElement Destino = document.CreateElement("Destino");
-                    Destino.AppendChild(document.CreateTextNode(enlacei.Destino.ToString()));
-
-                    enlace.AppendChild(origen);
-                    enlace.AppendChild(Destino);
-                }
-            }
-
+        public void SalvarDocumento()
+        {
             document.Save("Prueba.xml");
         }
 
-        public void AutoReccorer(Nodo nodo ,XmlElement praiz)
+        public void ExportarNodo(Nodo nodo, string Padre)
         {
             XmlElement nodoi = document.CreateElement(nodo.ToString());
+            XmlElement raiz = ExtraerRaiz(Padre);
 
-            foreach(var prop in nodo.Propiedades)
+            var propiedades = DiccionarioPropiedades.Propiedades(nodo);
+            Elementos.Add(nodoi);
+
+            foreach (var prop in propiedades)
             {
-                XmlElement propi= document.CreateElement(prop.Item1);
-                propi.AppendChild(document.CreateTextNode(prop.Item2.ToString()));
+                XmlElement propi = document.CreateElement(prop.Key);
+                propi.AppendChild(document.CreateTextNode(prop.Value.ToString()));
                 nodoi.AppendChild(propi);
+                Elementos.Add(propi);
             }
-            
-            praiz.AppendChild(nodoi);
 
-            if (nodo.enlaces != null)
-            {
-               foreach(var enlace in nodo.enlaces)
-                {
-                    XmlElement enlacei = document.CreateElement(enlace.ToString());
-                    nodoi.AppendChild(enlacei);
-                    AutoReccorer(enlace.Origen,enlacei);
-                    AutoReccorer(enlace.Destino,enlacei);
-                }
-            }
+            raiz.AppendChild(nodoi);
+        }
+
+        private XmlElement ExtraerRaiz(string Padre)
+        {
+            XmlElement raiz = null;
+            raiz = Elementos.FindLast(x => x.LocalName == Padre);
+
+            //foreach (var element in Elementos)
+            //{
+            //    if (element.LocalName == Padre)
+            //    {
+            //        raiz = element;
+            //        return raiz;
+            //    }
+            //}
+            return raiz;
+        }
+
+        public void ExportarEnlace(Enlace enlace, string Padre)
+        {
+            XmlElement raiz = ExtraerRaiz(Padre);
+            XmlElement enlacei = document.CreateElement(enlace.ToString());
+            Elementos.Add(enlacei);
+            raiz.AppendChild(enlacei);
         }
     }
 }

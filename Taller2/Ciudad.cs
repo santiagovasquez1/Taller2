@@ -10,7 +10,7 @@ namespace Taller2
         public int Poblacion
         {
             get { return poblacion; }
-            set { poblacion = value; ExportarPropiedades(Valor:value); }
+            set { poblacion = value; }
         }
 
         public Ciudad(string nombre, int poblacion)

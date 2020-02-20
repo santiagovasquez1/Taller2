@@ -11,10 +11,10 @@ namespace Taller2
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; ExportarPropiedades(Valor: nombre); }
+            set { nombre = value; }
         }
 
-        public List<Enlace> enlaces { get; set; } = new List<Enlace>();
+        public List<Enlace> enlaces { get; set; } 
         public List<Tuple<string, object>> Propiedades = new List<Tuple<string, object>>();
 
         public abstract void FuncionGeo();
@@ -25,10 +25,5 @@ namespace Taller2
             return tempEnlaces;
         }
 
-        public void ExportarPropiedades([CallerMemberName] string Name = null, object Valor = null)
-        {
-            var Temp = new Tuple<string, object>(Name, Valor);
-            Propiedades.Add(Temp);
-        }
     }
 }
