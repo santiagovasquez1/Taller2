@@ -7,6 +7,10 @@ namespace Taller2
 {
     internal class Program
     {
+        /// <summary>
+        /// La clase program es la encargada de la creacion del grafo
+        /// y de la exportación de este al formato deseado
+        /// </summary>
         private static Grafo MIGrafo;
         private static IVisitante visitante;
 
@@ -50,7 +54,6 @@ namespace Taller2
             foreach (var nodoi in MIGrafo.Nodos)
                 nodoi.FuncionGeo();
 
-            Console.WriteLine("Ensayo Visitante");
             ExportarBuilder builder = new ExportarBuilder(TipoArchivo.XML);
             visitante = new CVisitante(MIGrafo,builder.CrearExportador());
 

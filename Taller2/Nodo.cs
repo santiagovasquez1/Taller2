@@ -15,7 +15,6 @@ namespace Taller2
         }
 
         public List<Enlace> enlaces { get; set; } 
-        public List<Tuple<string, object>> Propiedades = new List<Tuple<string, object>>();
 
         public abstract void FuncionGeo();
 

@@ -1,12 +1,16 @@
-﻿using System;
-
-namespace Taller2.Visitante
+﻿namespace Taller2.Visitante
 {
+    /// <summary>
+    /// Clase que se encarga de recorrer cada uno de los elementos
+    /// de la estructura del grafo y se encarga de implementar las
+    /// operaciones necesarias para la exportación de la estructura 
+    /// del grafo
+    /// </summary>
     public class CVisitante : IVisitante
     {
         public IExportar Exportar { get; set; }
 
-        public CVisitante(Grafo grafo,IExportar exportar)
+        public CVisitante(Grafo grafo, IExportar exportar)
         {
             Exportar = exportar;
             Visitar(grafo, "Visitando Grafo");
@@ -14,7 +18,8 @@ namespace Taller2.Visitante
 
         public void Visitar(Nodo nodo, string Raiz)
         {
-            Exportar.ExportarNodo(nodo, Raiz);
+            var propiedades = DiccionarioPropiedades.Propiedades(nodo);
+            Exportar.ExportarNodo(nodo, Raiz,propiedades);
 
             if (nodo.enlaces != null)
             {
@@ -53,7 +58,6 @@ namespace Taller2.Visitante
             }
 
             Exportar.SalvarDocumento();
-            
         }
     }
 }

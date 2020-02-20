@@ -20,15 +20,14 @@ namespace Taller2
 
         public void SalvarDocumento()
         {
-            document.Save("Prueba.xml");            
+            document.Save("Prueba.xml");
         }
 
-        public void ExportarNodo(Nodo nodo, string Padre)
+        public void ExportarNodo(Nodo nodo, string Padre, Dictionary<string, object> propiedades)
         {
             XmlElement nodoi = document.CreateElement(nodo.ToString());
             XmlElement raiz = ExtraerRaiz(Padre);
 
-            var propiedades = DiccionarioPropiedades.Propiedades(nodo);
             Elementos.Add(nodoi);
 
             foreach (var prop in propiedades)
@@ -42,19 +41,26 @@ namespace Taller2
             raiz.AppendChild(nodoi);
         }
 
-        private XmlElement ExtraerRaiz(string Padre)
-        {
-            XmlElement raiz = null;
-            raiz = Elementos.FindLast(x => x.LocalName == Padre);
-            return raiz;
-        }
-
         public void ExportarEnlace(Enlace enlace, string Padre)
         {
             XmlElement raiz = ExtraerRaiz(Padre);
             XmlElement enlacei = document.CreateElement(enlace.ToString());
             Elementos.Add(enlacei);
             raiz.AppendChild(enlacei);
+        }
+
+        /// <summary>
+        /// Función que se encarga de encontrar el elemento padre, al
+        /// cual se quiere enlazar el elemento hijo dentro de la
+        /// estructura XML
+        /// </summary>
+        /// <param name="Padre"></param>
+        /// <returns></returns>
+        private XmlElement ExtraerRaiz(string Padre)
+        {
+            XmlElement raiz = null;
+            raiz = Elementos.FindLast(x => x.LocalName == Padre);
+            return raiz;
         }
     }
 }

@@ -4,6 +4,12 @@ using System.Text;
 
 namespace Taller2
 {
+    /// <summary>
+    /// Clase encargada de la creación de las clases
+    /// especificas de Exportación, esto para quitarle
+    /// la responsabilidad de instanciación a la clase
+    /// CVisitante
+    /// </summary>
    public  class ExportarBuilder
     {
         private IExportar Exportar;
