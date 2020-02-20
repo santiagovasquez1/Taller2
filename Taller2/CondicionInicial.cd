@@ -102,11 +102,22 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Taller2.DiccionarioPropiedades">
-    <Position X="8.25" Y="2.25" Width="1.5" />
+    <Position X="8.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DiccionarioPropiedades.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Taller2.ExportarBuilder">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ExportarBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Exportar" />
+      <Field Name="TipoArchivo" />
+    </ShowAsAssociation>
   </Class>
   <Interface Name="Taller2.Visitante.IVisitante">
     <Position X="10.25" Y="0.5" Width="1.5" />
@@ -122,5 +133,12 @@
       <FileName>IExportar.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Enum Name="Taller2.TipoArchivo">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoArchivo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -20,7 +20,7 @@ namespace Taller2
 
         public void SalvarDocumento()
         {
-            document.Save("Prueba.xml");
+            document.Save("Prueba.xml");            
         }
 
         public void ExportarNodo(Nodo nodo, string Padre)
@@ -46,15 +46,6 @@ namespace Taller2
         {
             XmlElement raiz = null;
             raiz = Elementos.FindLast(x => x.LocalName == Padre);
-
-            //foreach (var element in Elementos)
-            //{
-            //    if (element.LocalName == Padre)
-            //    {
-            //        raiz = element;
-            //        return raiz;
-            //    }
-            //}
             return raiz;
         }
 

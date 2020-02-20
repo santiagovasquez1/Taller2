@@ -51,9 +51,9 @@ namespace Taller2
                 nodoi.FuncionGeo();
 
             Console.WriteLine("Ensayo Visitante");
-            visitante = new CVisitante((Grafo)MIGrafo);
+            ExportarBuilder builder = new ExportarBuilder(TipoArchivo.XML);
+            visitante = new CVisitante(MIGrafo,builder.CrearExportador());
 
-            // ExportarFactory.ExportarInfoGrafo(MIGrafo, TiposArchivos.XML);
             Console.WriteLine("-----------------");
         }
     }
