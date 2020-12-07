@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Taller2.Visitante;
@@ -56,7 +57,7 @@ namespace Taller2
 
             ExportarBuilder builder = new ExportarBuilder(TipoArchivo.XML);
             visitante = new CVisitante(MIGrafo,builder.CrearExportador());
-
+            string output = JsonConvert.SerializeObject(MIGrafo);
             Console.WriteLine("-----------------");
         }
     }

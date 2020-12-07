@@ -6,19 +6,13 @@
       <HashCode>AAAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Grafo.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Nodos" />
-      <Property Name="Enlaces" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Taller2.Enlace">
     <Position X="1" Y="3.5" Width="1.5" />
     <AssociationLine Name="Origen" Type="Taller2.Nodo" FixedFromPoint="true">
       <Path>
-        <Point X="2.5" Y="4.885" />
-        <Point X="3.921" Y="4.885" Type="JumpStart" />
-        <Point X="4.087" Y="4.885" Type="JumpEnd" />
-        <Point X="5.75" Y="4.885" />
+        <Point X="2.5" Y="4.79" />
+        <Point X="5.75" Y="4.79" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -36,9 +30,6 @@
       <HashCode>AAAABAAAAAAAAACAAAAAgAAAAAAAAMAAAAAAAAAAAAA=</HashCode>
       <FileName>Nodo.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="enlaces" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Taller2.Ciudad">
     <Position X="1" Y="7.25" Width="1.75" />
@@ -56,14 +47,6 @@
   </Class>
   <Class Name="Taller2.LugarTurismo">
     <Position X="8.25" Y="7.25" Width="1.75" />
-    <InheritanceLine Type="Taller2.Nodo" FixedToPoint="true">
-      <Path>
-        <Point X="6.875" Y="5.699" />
-        <Point X="6.875" Y="6.875" />
-        <Point X="8.812" Y="6.875" />
-        <Point X="8.812" Y="7.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAABAAIAAQAAAAAAAAAA=</HashCode>
       <FileName>LugarTurismo.cs</FileName>
